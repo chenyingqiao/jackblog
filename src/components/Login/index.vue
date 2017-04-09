@@ -11,10 +11,10 @@
 		    	        	<i class="fa fa-envelope-o"></i>
 		    	        </div>
 		    	        <input type="text" 
-		    	        	v-model="user.email" 
-		    	        	v-validate:email="{ required: true, minlength: 3, maxlength: 30, email:true }"
+		    	        	v-model="user.username" 
+		    	        	v-validate:username="{ required: true, minlength: 3, maxlength: 30 }"
 		    	        	class="form-control" 
-		    	        	:class="[$signinValidation.email.invalid ? 'ng-invalid' : 'ng-valid', $signinValidation.email.dirty ? 'ng-dirty' : '']"
+		    	        	:class="[$signinValidation.username.invalid ? 'ng-invalid' : 'ng-valid', $signinValidation.username.dirty ? 'ng-dirty' : '']"
 		    	        	placeholder="邮箱" />
 		    	      </div>
 		    	    </div>
@@ -29,7 +29,7 @@
 		              	placeholder="密码" />
 		            </div>
 		          </div>
-		          <div class="form-group" >
+<!-- 		          <div class="form-group" >
 		          	<div class="col-xs-6 captcha-code">
 		          		<input class="form-control"
 			          		v-model="user.captcha"
@@ -44,8 +44,7 @@
 		          			<img :src="captchaUrl" />
 		          		</a>
 		          	</div>
-
-		          </div>
+		          </div> -->
 		          <div class="form-group">
 		          	<button class="btn btn-primary btn-lg btn-block" type="submit" id="signin_btn" :disabled="$signinValidation.invalid">登 录</button>
 		          </div>
@@ -55,9 +54,9 @@
 
 	    </div>
 			<div class="login-sns">
-		      <p>您还可以通过以下方式直接登录</p>
+		      <p>您还可以通过以下方式直接登录!!!</p>
 		      <snsloginbtns :logins="logins"></snsloginbtns>
-		  </div>
+		  	</div>
 	</div>
 </div>
 </template>
@@ -91,9 +90,11 @@ export default {
   data (){
     return {
       user:{
-        email:'',
+        username:'',
         password:'',
-        captcha:''
+        grant_type:'password',
+        client_id:1000002,
+        client_secret:111111
       }
     }
   },

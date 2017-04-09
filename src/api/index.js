@@ -2,6 +2,7 @@ import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,Com
 
 export default {
   localLogin: function (data) {
+    // console.log(AuthResource.save({id:'local'},data));
     return AuthResource.save({id:'local'},data)
   },
   getSnsLogins: function () {

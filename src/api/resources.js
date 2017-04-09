@@ -23,9 +23,10 @@ Vue.http.interceptors.push((request, next)=>{
     }
   })
 })
-
-export const UserResource = Vue.resource(API_ROOT + 'users{/id}')
-export const AuthResource = Vue.resource(API_ROOT + 'auth{/id}')
+export const UserResource = Vue.resource("http://lerko.blog.com/" + 'users{/id}')
+// export const UserResource = Vue.resource(API_ROOT + 'users{/id}')
+export const AuthResource = Vue.resource("http://lerko.blog.com/" + 'auth{/id}')
+// export const AuthResource = Vue.resource(API_ROOT + 'auth{/id}')
 export const ArticleResource = Vue.resource(API_ROOT + 'article{/id}{/controller}')
 export const TagResource = Vue.resource(API_ROOT + 'tags{/id}')
 export const CommentResource = Vue.resource(API_ROOT + 'comment{/id}{/controller}')

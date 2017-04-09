@@ -6,6 +6,8 @@ if(CookieDomain !== ''){
 }
 
 export function saveCookie(name,value) {
+	console.log(name);
+	console.log(value);
   cookie.save(name, value, cookieConfig)
 }
 

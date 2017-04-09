@@ -6,7 +6,9 @@
     "start": "gulp serve",
     "build": "gulp build",
     "start:dist": "gulp serve:dist",
-    "pm2-start": "pm2 start --no-daemon process.json"
+    "pm2-start": "pm2 start --no-daemon process.json",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",
