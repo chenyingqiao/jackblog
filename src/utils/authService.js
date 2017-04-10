@@ -16,6 +16,7 @@ export function getCookie(name) {
 }
 
 export function removeCookie(name) {
+	console.log("去除"+name);
   cookie.remove(name, cookieConfig)
 }
 

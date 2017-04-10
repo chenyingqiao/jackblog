@@ -55,6 +55,7 @@ export const localLogin = (store, userInfo) => {
       return showMsg(store,response.data.error_msg || '登录失败')
     }
     const token = response.data.access_token
+    console.log(token);
     //保存token信息
     saveCookie('token',token)
     saveCookie('expires_in',response.data.expires_in)
