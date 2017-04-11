@@ -6,8 +6,6 @@ if(CookieDomain !== ''){
 }
 
 export function saveCookie(name,value) {
-	console.log(name);
-	console.log(value);
   cookie.save(name, value, cookieConfig)
 }
 
@@ -16,7 +14,6 @@ export function getCookie(name) {
 }
 
 export function removeCookie(name) {
-	console.log("去除"+name);
   cookie.remove(name, cookieConfig)
 }
 

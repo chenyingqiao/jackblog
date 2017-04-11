@@ -12,6 +12,7 @@ Vue.http.options.credentials = true
 Vue.http.interceptors.push((request, next)=>{
   // 这里对请求体进行处理
   request.headers = request.headers || {}
+  console.log("asdfasdf:=="+getCookie('token'));
   if (getCookie('token')) {
     request.headers.Authorization = 'Bearer ' + getCookie('token').replace(/(^\")|(\"$)/g, '')
   }
@@ -23,10 +24,8 @@ Vue.http.interceptors.push((request, next)=>{
     }
   })
 })
-export const UserResource = Vue.resource("http://api-lerko.ngrok.cc/" + 'users{/id}')
-// export const UserResource = Vue.resource(API_ROOT + 'users{/id}')
-export const AuthResource = Vue.resource("http://api-lerko.ngrok.cc/" + 'auth{/id}')
-// export const AuthResource = Vue.resource(API_ROOT + 'auth{/id}')
+export const UserResource = Vue.resource(API_ROOT + 'users{/id}')
+export const AuthResource = Vue.resource(API_ROOT + 'auth{/id}')
 export const ArticleResource = Vue.resource(API_ROOT + 'article{/id}{/controller}')
 export const TagResource = Vue.resource(API_ROOT + 'tags{/id}')
 export const CommentResource = Vue.resource(API_ROOT + 'comment{/id}{/controller}')
