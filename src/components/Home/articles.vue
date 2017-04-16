@@ -15,6 +15,8 @@
 			    <span>阅读 {{article.visit_count}}</span>
 			    <span> · 评论 {{article.comment_count}}</span>        
 			    <span> · 喜欢 {{article.like_count}}</span>
+			    <span> · <a href="/editor/index.html">编辑</a></span>
+			    <span> · <a href="/editor/index.html">删除</a></span>
 			  </div>
 			</div>
 		</li>
