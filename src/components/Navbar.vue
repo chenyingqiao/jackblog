@@ -4,7 +4,7 @@
 		      <a v-link="{ path: '/' }" class="navbar-item logo" :class="{'active':$route.name !== 'apps'}" title="首页">
 		        Hu
 		      </a>
-		      <a v-link="{ path: '/apps',activeClass: 'active'}" class="navbar-item mobile" title="移动应用">
+		      <a href="/editor/index.html" class="navbar-item mobile" title="书写">
 		      	<i class="fa fa-mobile"></i>
 		      </a>
 		  </div>   
