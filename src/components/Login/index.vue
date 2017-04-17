@@ -2,9 +2,9 @@
 <div class="signin-box">
 	<div class="signin-container">
 		<div style="margin:0 auto;text-align: center;font-size: 2rem;margin-bottom: 20px;color:#de533a">
-	    	<span class="title" @click="loginOrRegister=true">登 录</span>
+	    	<span class="title" @click="loginOrRegister=false">登 录</span>
 	    	<span>|</span>
-	    	<span class="title" @click="loginOrRegister=false">注 册</span>
+	    	<span class="title" @click="loginOrRegister=true">注 册</span>
 		</div>
 		<div v-show="!loginOrRegister">
 			<div id="signinForm">
@@ -132,7 +132,7 @@ export default {
         client_id:1000002,
         client_secret:111111
       },
-      loginOrRegister:false
+      loginOrRegister:true
     }
   },
   route: {
@@ -147,7 +147,7 @@ export default {
   methods: {
     login(signinValidation){
       if(signinValidation.valid){
-      	if(this.user.password_re){
+      	if(this.user.password_re&&!loginOrRegister){
       		this.localRegister(this.user)
       	}else{
 	        this.localLogin(this.user)
