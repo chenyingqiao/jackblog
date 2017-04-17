@@ -4,6 +4,9 @@ export default {
   localLogin: function (data) {
     return AuthResource.save({id:'local'},data)
   },
+  localRegister: function (data) {
+    return AuthResource.save({id:'register'},data)
+  },
   getSnsLogins: function () {
     return UserResource.get({id:'snsLogins'})
   },
