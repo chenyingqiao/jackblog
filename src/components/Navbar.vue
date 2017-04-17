@@ -4,7 +4,7 @@
 		      <a v-link="{ path: '/' }" class="navbar-item logo" :class="{'active':$route.name !== 'apps'}" title="首页">
 		        Hu
 		      </a>
-		      <a href="/editor/index.html" class="navbar-item mobile" title="书写">
+		      <a href="http://api-lerko.ngrok.cc/editor" class="navbar-item mobile" title="书写">
 		      	<i class="fa fa-mobile"></i>
 		      </a>
 		  </div>   
