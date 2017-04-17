@@ -6,7 +6,7 @@
 	    	<span>|</span>
 	    	<span class="title" @click="loginOrRegister=false">注 册</span>
 		</div>
-		<div v-show="loginOrRegister">
+		<div v-show="!loginOrRegister">
 			<div id="signinForm">
 			    <validator name="signinValidation">
 			      <form class="signin-form form-horizontal" @submit.prevent="login($signinValidation)" novalidate>
@@ -41,7 +41,7 @@
 			    </validator>
 		    </div>
 		</div>
-		<div v-show="!loginOrRegister">
+		<div v-show="loginOrRegister">
 			<div id="signinForm">
 			    <validator name="signinValidation">
 			      <form class="signin-form form-horizontal" @submit.prevent="login($signinValidation)" novalidate>
@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { getSnsLogins,getCaptchaUrl,localLogin } from '../../vuex/actions'
+import { getSnsLogins,getCaptchaUrl,localLogin,localRegister } from '../../vuex/actions'
 import snsloginbtns from './snsLogin'
 
 export default {
@@ -114,7 +114,7 @@ export default {
       token: ({auth}) => auth.token
     },
     actions:{
-      getSnsLogins,getCaptchaUrl,localLogin
+      getSnsLogins,getCaptchaUrl,localLogin,localRegister
     }
   },
   validators: { 
@@ -147,7 +147,11 @@ export default {
   methods: {
     login(signinValidation){
       if(signinValidation.valid){
-        this.localLogin(this.user)
+      	if(this.user.password_re){
+      		this.localRegister(this.user)
+      	}else{
+	        this.localLogin(this.user)
+      	}
       }
     }
   }

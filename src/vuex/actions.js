@@ -67,6 +67,21 @@ export const localLogin = (store, userInfo) => {
     showMsg(store,response.data.error_msg || '登录失败')
   })
 }
+
+export const localRegister = (store, userInfo) => {
+  api.localRegister(userInfo).then(response => {
+    if(!response.ok){
+      getCaptchaUrl(store)
+      return showMsg(store,response.data.error_msg || '注册失败')
+    }
+    showMsg(store,'注册成功!','success')
+    store.router.go({path:'/'})
+  }, response => {
+    getCaptchaUrl(store)
+    showMsg(store,response.data.error_msg || '注册失败')
+  })
+}
+
 export const getUserInfo = ({ dispatch }) => {
   api.getMe().then(response => {
     if(!response.ok){
