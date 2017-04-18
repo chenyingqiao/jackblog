@@ -5,7 +5,7 @@
 		        Hu
 		      </a>
 		      <a href="http://api-lerko.ngrok.cc/editor" class="navbar-item mobile" title="书写">
-		      	<i class="fa fa-mobile"></i>
+		      	<i class="fa">M</i>
 		      </a>
 		  </div>   
 
