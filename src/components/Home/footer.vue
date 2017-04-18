@@ -1,6 +1,6 @@
 <template>
 	<footer>
-	<div class="footer-container">
+<!-- 	<div class="footer-container">
 	  <ul>
 	    <li>
 	      <span>©2015 / 鄂ICP备15010989号-1</span>
@@ -16,7 +16,7 @@
 	      </a>
 	    </li>
 	  </ul>
-	</div>
+	</div> -->
 	</footer>
 </template>
 
