@@ -2,10 +2,10 @@
 		<div class="navbar-box navbar-skin">
 		  <div class="navbar-menu">
 		      <a v-link="{ path: '/' }" class="navbar-item logo" :class="{'active':$route.name !== 'apps'}" title="首页">
-		        Hu
+		        Lk
 		      </a>
 		      <a href="http://api-lerko.ngrok.cc/editor" class="navbar-item mobile" title="书写">
-		      	<i class="fa fa-mobile"></i>
+		      	<i class="fa">M</i>
 		      </a>
 		  </div>   
 
