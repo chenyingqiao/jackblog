@@ -3,6 +3,7 @@
 	  <div class="row">
 	    <Sidebar :index-img="indexImg"></Sidebar>
 	    <div class="col-sm-7 col-sm-offset-3 main-content">
+        <Search></Search>
 				<Tags :tag-list="tagList" :options="options" :is-fetching="isFetching"></Tags>
         <Articles :article-list="articleList"></Articles>
         <Loadmore v-if="articleList.length > 0 && isMore" :options="options" :is-more="isMore" :is-fetching="isFetching"></Loadmore>
@@ -17,10 +18,11 @@ import Tags from './tags.vue'
 import Articles from './articles.vue'
 import Loadmore from './loadmore.vue'
 import Footerbar from './footer.vue'
+import Search from './search.vue'
 import { getIndexImage,getTagList,changeOptions,getArticleList } from '../../vuex/actions'
 
 export default {
-  components:{ Sidebar,Tags,Articles,Loadmore,Footerbar },
+  components:{ Sidebar,Tags,Articles,Loadmore,Footerbar,Search },
   vuex:{
     getters:{
       indexImg: ({globalVal}) => globalVal.indexImg,
