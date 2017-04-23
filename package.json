@@ -4,11 +4,10 @@
   "description": "Jackblog vue 版",
   "scripts": {
     "start": "gulp serve",
-    "build": "gulp build",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start:dist": "gulp serve:dist",
     "pm2-start": "pm2 start --no-daemon process.json",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -69,6 +68,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "lodash": "^4.17.4",
     "serve-favicon": "^2.3.0"
   }
 }

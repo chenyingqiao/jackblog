@@ -2,7 +2,8 @@ import {
 	ARTICLE_LIST,
 	ADD_ARTICLE_LIST,
 	REQUEST_ARTICLE_LIST,
-	GET_ARTICLE_LIST_FAILURE
+	GET_ARTICLE_LIST_FAILURE,
+  DELETE_ARTICLE
 } from '../types'
 
 const state = {
@@ -27,6 +28,11 @@ const mutations = {
     state.isFetching = false
     state.isMore = action.isMore
     state.items = [...state.items, ...action.articleList]
+  },
+  [DELETE_ARTICLE](state,id){
+    console.log(id)
+    console.log(state.items)
+    state.items.shift(id)
   }
 }
 

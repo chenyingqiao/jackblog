@@ -56,5 +56,8 @@ export default {
   },
   delReply: function (id,data) {
     return CommentResource.update({id:id, controller:'delReply'},data)
+  },
+  delArticle:function(id){
+    return ArticleResource.remove({id:id,controller:'deleteArticle'})
   }
 }

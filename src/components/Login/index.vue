@@ -147,7 +147,7 @@ export default {
   methods: {
     login(signinValidation){
       if(signinValidation.valid){
-      	if(this.user.password_re&&!this.loginOrRegister){
+      	if(this.user.password_re&&this.loginOrRegister){
       		this.localRegister(this.user)
       	}else{
 	        this.localLogin(this.user)

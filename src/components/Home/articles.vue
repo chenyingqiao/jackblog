@@ -1,6 +1,6 @@
 <template>
 	<ul class="article-list list-unstyled clearfix">
-		<li v-for="article in articleList" class="article-item" :class="article.images.length > 0 ? 'have-img' : ''">
+		<li v-for="(index ,article) in articleList" class="article-item" :class="article.images.length > 0 ? 'have-img' : ''">
 			<a v-if="article.images.length > 0" v-link="{ name: 'article', params: {aid: article._id } }" class="wrap-img">
 				<img :src="article.images[0].url + '-100x100'" />
 			</a>
@@ -15,8 +15,8 @@
 			    <span>阅读 {{article.visit_count}}</span>
 			    <!-- <span> · 评论 {{article.comment_count}}</span>         -->
 			    <span> · 喜欢 {{article.like_count}}</span>
-			    <span> · <a href="http://api-lerko.ngrok.cc/editor?aid={{article._id}}">编辑</a></span>
-			    <!-- <span> · <a href="/editor/index.html">删除</a></span> -->
+			    <span v-show="auth.token && auth.user && auth.user.uid==article.uid"> · <a href="http://api-lerko.ngrok.cc/editor?aid={{article._id}}">编辑</a></span>
+			    <span v-show="auth.token && auth.user && auth.user.uid==article.uid"> · <a @click="deleteArticle({aid:article._id,id:index})">删除</a></span>
 			  </div>
 			</div>
 		</li>
@@ -26,6 +26,11 @@
 
 <script>
 export default {
-  props: ['articleList']
+  props: ['articleList','auth'],
+  methods:{
+  	deleteArticle(index){
+  		this.$parent.deleteArticle(index)
+  	}
+  }
 }
 </script>

@@ -232,3 +232,20 @@ export const getApps = ({ dispatch }) => {
     dispatch(types.FAILURE_GET_APPS)
   })
 }
+
+export const deleteArticle=(store,{aid,id}) => {
+  api.delArticle(aid).then(response => {
+    if(response.ok){
+      //删除成功就本地删除列表
+      console.log(response)
+      console.log(id)
+      console.log(aid)
+      console.log(store)
+      if(response.data.status)
+        store.dispatch(types.DELETE_ARTICLE,id)
+    }
+    showMsg(store,response.data.msg,'success')
+  },response => {
+    showMsg(store,response.data.msg)
+  })
+}
