@@ -1,5 +1,8 @@
 <template>
 	<ul class="sort-tags list-unstyled clearfix">
+		<li>
+	      <a :class="{'active':(options.sortName == 'my')}" @click.prevent="changeSort('my')" href="javascript:;">我的</a>
+	    </li>
 	    <li>
 	      <a :class="{'active':(options.sortName == 'publish_time')}" @click.prevent="changeSort('publish_time')" href="javascript:;">最新</a>
 	    </li>

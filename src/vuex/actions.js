@@ -159,6 +159,7 @@ export const getArticleDetail = ({ dispatch }, id, user) => {
       dispatch(types.ARTICLE_DETAIL, {
         articleDetail: {...article,isLike:isLike}
       })
+      dispatch(types.CLICK_ARTICLE_LIST_ITEM,id)
     }
   })
 }
@@ -180,6 +181,7 @@ export const toggleLike = ({ dispatch }, id) => {
         like_count: json.count,
         isLike: json.isLike 
       })
+      dispatch(types.CLICK_LIKE_ARTICLE_LIST,id)
     }
   })
 }
@@ -236,11 +238,6 @@ export const getApps = ({ dispatch }) => {
 export const deleteArticle=(store,{aid,id}) => {
   api.delArticle(aid).then(response => {
     if(response.ok){
-      //删除成功就本地删除列表
-      console.log(response)
-      console.log(id)
-      console.log(aid)
-      console.log(store)
       if(response.data.status)
         store.dispatch(types.DELETE_ARTICLE,id)
     }
