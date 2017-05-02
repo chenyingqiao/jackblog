@@ -1,6 +1,5 @@
 <template>
   <div class="article-box">
-    <link rel="stylesheet" type="text/css" href="editor/css/editormd.css">
     <Content :article-detail="articleDetail"></Content>
     <Like :like-count="articleDetail.like_count" :is-like="articleDetail.isLike"></Like>
     <Prenext :prev-article="prevArticle" :next-article="nextArticle"></Prenext>
