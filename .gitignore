@@ -13,7 +13,7 @@ node_modules
 
 ##push server
 #/*
-#!/dist
+/dist
 #!server.js
 #!/logs
 #!package.json

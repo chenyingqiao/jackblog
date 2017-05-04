@@ -23,7 +23,7 @@
 		        </a>
 		        <a v-link="{ path: '/settings' }" href="javascript:;" class="navbar-item expanded-avatar" title="{{auth.user.nickname}}">          
 		          <img :src="auth.user.avatar || defaultAvatar" /> 
-		        </a>  
+		        </a>
 		      </div>
 	      	<div v-else>
 	      	  <a v-link="{ path: '/login',activeClass:'active' }" class="navbar-item" title="登录">
@@ -40,7 +40,8 @@
 			  	  </a>
 			  	  <ul name="dropdown-menu" class="dropdown-menu pull-right">
 				  	  <li>
-				  	    <a v-link="{ path: '/settings' }"><i class="fa fa-cog"></i> 设置</a>
+				  	    <!-- <a v-link="{ path: '/settings' }"><i class="fa fa-cog"></i> 设置</a> -->
+				  	    <a><i class="fa fa-cog"></i> 设置</a>
 				  	  </li>
 				  	  <li role="separator" class="divider"></li>
 				  	  <li>

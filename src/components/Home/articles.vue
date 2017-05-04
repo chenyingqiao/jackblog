@@ -2,7 +2,7 @@
 	<ul class="article-list list-unstyled clearfix">
 		<li v-for="(index ,article) in articleList" class="article-item" :class="article.images.length > 0 ? 'have-img' : ''">
 			<a v-if="article.images.length > 0" v-link="{ name: 'article', params: {aid: article._id } }" class="wrap-img">
-				<img :src="article.images[0].url + '-100x100'" />
+				<img :src="article.images[0].url" />
 			</a>
 			<div>
 			  <p class="list-top">               
@@ -34,3 +34,9 @@ export default {
   }
 }
 </script>
+
+<style>
+	.main-content {
+	    max-width: 900px;
+	}
+</style>

@@ -26,7 +26,6 @@
                   placeholder="2-15字符，中英文、数字和下划线" 
                   type="text" 
                   :value="nickname"
-                  @input="updateNickname"
                   v-validate:nickname="{ required: true, minlength: 2, maxlength: 15, nickname:true }"
                   class="form-control"
                   v-bind:class="[$settingsValidation.nickname.invalid ? 'ng-invalid' : 'ng-valid', $settingsValidation.nickname.dirty ? 'ng-dirty' : '']" >
@@ -38,7 +37,6 @@
                   placeholder="2-15字符，中英文、数字和下划线" 
                   type="text" 
                   :value="nickname"
-                  @input="updateNickname"
                   v-validate:nickname="{ required: true, minlength: 2, maxlength: 15, nickname:true }"
                   class="form-control"
                   v-bind:class="[$settingsValidation.nickname.invalid ? 'ng-invalid' : 'ng-valid', $settingsValidation.nickname.dirty ? 'ng-dirty' : '']" >
@@ -47,15 +45,11 @@
               <div class="form-group">
                 <label class="control-label">头像</label>
                 <form action="/fileupload" method="post" id="avater" enctype="multipart/form-data">
-                <input 
-                  placeholder="2-15字符，中英文、数字和下划线" 
-                  type="file" 
-                  :value="nickname"
-                  @input="updateNickname"
-                  v-validate:nickname="{ required: true, minlength: 2, maxlength: 15, nickname:true }"
-                  class="form-control"
-                  v-bind:class="[$settingsValidation.nickname.invalid ? 'ng-invalid' : 'ng-valid', $settingsValidation.nickname.dirty ? 'ng-dirty' : '']" >
-                  </form>
+                  <input 
+                    placeholder="2-15字符，中英文、数字和下划线" 
+                    type="file"
+                    v-bind:class="[$settingsValidation.nickname.invalid ? 'ng-invalid' : 'ng-valid', $settingsValidation.nickname.dirty ? 'ng-dirty' : '']" >
+                </form>
               </div>
 							<button type="submit" class="btn btn-block btn-lg btn-primary" :disabled="$settingsValidation.invalid">保 存</button>
 		        </form>

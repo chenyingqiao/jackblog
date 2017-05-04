@@ -1,5 +1,5 @@
 <template>
-	<input type="text" v-model="search_keyword" @oninput="run_search()">
+	<input type="text" v-model="search_keyword" @oninput="run_search()" style="width:70%;height:30px;">
 </template>
 
 <script>
@@ -27,8 +27,7 @@ export default {
 					'key_word':self.search_keyword,
 					'tagId':''
 				})
-			})
-			
+			},1000)
 		}
 	}
 }
