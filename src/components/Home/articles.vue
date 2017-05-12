@@ -20,7 +20,7 @@
 			  </div>
 			</div>
 		</li>
-		<li v-if="articleList.length < 1" class="no-content">正在大力回车...</li>
+		<li v-if="articleList.length < 1" class="no-content">这里还没有文章...</li>
 	</ul>
 </template>
 

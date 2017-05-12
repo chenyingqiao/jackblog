@@ -2,10 +2,10 @@
 		<div class="navbar-box navbar-skin">
 		  <div class="navbar-menu">
 		      <a v-link="{ path: '/' }" class="navbar-item logo" :class="{'active':$route.name !== 'apps'}" title="首页">
-		        Lk
+		        首
 		      </a>
 		      <a href="http://api-lerko.ngrok.cc/editor" class="navbar-item mobile" title="书写">
-		      	<i class="fa">M</i>
+		      	<i class="fa">写</i>
 		      </a>
 		  </div>   
 
@@ -21,7 +21,8 @@
 		        <a href="javascript:;" class="navbar-item expanded-logout" @click="logout()" title="登出">
 		            <i class="fa fa-sign-out"></i>
 		        </a>
-		        <a v-link="{ path: '/settings' }" href="javascript:;" class="navbar-item expanded-avatar" title="{{auth.user.nickname}}">          
+		        <!-- <a v-link="{ path: '/settings' }" href="javascript:;" class="navbar-item expanded-avatar" title="{{auth.user.nickname}}">           -->
+		        <a href="javascript:;" class="navbar-item expanded-avatar" title="{{auth.user.nickname}}">          
 		          <img :src="auth.user.avatar || defaultAvatar" /> 
 		        </a>
 		      </div>
